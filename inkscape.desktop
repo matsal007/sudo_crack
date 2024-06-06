@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=Inkscape
+Type=Application
+Icon=/home/desenvolvimento/.local/share/icons/inkscape-logo.svg
+Exec=/home/desenvolvimento/.local/bin/inkscape

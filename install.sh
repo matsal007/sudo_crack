@@ -1,24 +1,9 @@
-#!/bin/bash
 
-read -p "Type username: " username
-cd /home/$username
+# Download Inkscape Appimage https://inkscape.org/pt-br/release/inkscape-1.3.2/gnulinux/appimage/dl/ as /home/desenvolvimento/.local/bin/inkscape
+wget https://inkscape.org/pt-br/release/inkscape-1.3.2/gnulinux/appimage/dl/ -O /home/desenvolvimento/.local/bin/inkscape
+#Download Inkscape logo https://media.inkscape.org/static/images/inkscape-logo.svg as /home/desenvolvimento/.local/share/icons/inkscape.svg
+wget https://media.inkscape.org/static/images/inkscape-logo.svg -O /home/desenvolvimento/.local/share/icons/inkscape.svg
 
-touch /home/$username/my.cnf
-echo "[server]" >> /home/$username/my.cnf
-echo "user=username" >> /home/$username/my.cnf
-echo "basedir=/home/username/mysql" >> /home/$username/my.cnf
-echo "datadir=/home/username/sql_data" >> /home/$username/my.cnf
-echo "socket=/home/username/socket" >> /home/$username/my.cnf
-echo "port=3306" >> /home/$username/my.cnf
-
-mkdir -p /home/$username/mysql/lib/private
-mkdir /home/$username/sql_data
-touch /home/$username/socket
-
-cd /home/$username
-wget https://dev.mysql.com/get/Downloads/MySQL-8.4/mysql-8.4.0-linux-glibc2.28-x86_64.tar.xz
-tar -xvf /home/$username/mysql-8.4.0-linux-glibc2.28-x86_64.tar.xz
-rm /home/$username/mysql-8.4.0-linux-glibc2.28-x86_64.tar.xz
-echo "export PATH=$PATH:/home/$username/mysql-8.4.0-linux-glibc2.28-x86_64/bin" >> /home/$username/.bashrc
-
+mv ./inkscape.desktop /home/desenvolvimento/.local/share/applications/inkscape.desktop
+chmod +x /home/desenvolvimento/.local/bin/inkscape
 
